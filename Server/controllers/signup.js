@@ -1,7 +1,6 @@
 const { insert, remove, update, connect } = require("../database/db");
 const { encrypt, decrypt } = require("../bcrypt/privacy");
 
-let signal = 0;
 
 const check = async (data) => {
   try {
@@ -62,4 +61,4 @@ const signup = async (req, res) => {
   }
 };
 
-module.exports = { signup, check };
+module.exports = { check, signup };

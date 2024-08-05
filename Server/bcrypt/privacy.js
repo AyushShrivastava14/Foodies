@@ -8,8 +8,8 @@ const encrypt = async(data) => {
     return newPass;
 }
 
-const decrypt = async(userData, storedData) => {
-    return await bcrypt.compare(userData.password, storedData.password);
+const decrypt = async(inputPass, storedPass) => {
+    return await bcrypt.compare(inputPass, storedPass);
 }
 
 module.exports = {encrypt, decrypt};
