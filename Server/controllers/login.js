@@ -12,7 +12,8 @@ const login = async(req, res) => {
         const signal = await check(data);
         
         if(signal === -1) {
-            res.status(200).send(`Welcome! ${username}`);
+            // res.status(200).send(`Welcome! ${username}`);
+            console.log(`Welcome ${username}`);
         }
         else if(signal === 0){     // new user
             res.send('No User Found');

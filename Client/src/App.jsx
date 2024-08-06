@@ -4,6 +4,10 @@ import Home from "../pages/Home";
 import Menu from "../pages/Menu";
 import Cart from "../pages/Cart";
 import Feedback from "../pages/Feedback";
+// import SignUpForm from "../components/SignUpForm";
+// import LoginForm from "../components/LoginForm";
+import Signup from "../pages/Signup";
+import Login from "../pages/Login";
 
 function App() {
   return (
@@ -15,6 +19,8 @@ function App() {
           <Route path="/menu" element={<Menu />}></Route>
           <Route path="/cart" element={<Cart />}></Route>
           <Route path="/feedback" element={<Feedback />}></Route>
+          <Route path="/signup" element={<Signup />}></Route>
+          <Route path="/login" element={<Login />}></Route>
         </Routes>
       </BrowserRouter>
     </>
