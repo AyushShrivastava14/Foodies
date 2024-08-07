@@ -1,5 +1,7 @@
-import { useState } from "react";
 import SignUpForm from "../components/SignUpForm";
+import { useNavigate } from "react-router-dom";
+import { useContext, useState } from "react";
+import { AuthContext } from "../context/AuthContext";
 
 export default function Signup() {
   const [userinfo, setuserinfo] = useState({
@@ -8,10 +10,13 @@ export default function Signup() {
     branch: "",
     question: "",
     answer: "",
-    role: "",
+    role: "User",
     email: "",
     password: "",
   });
+
+  const navigate = useNavigate();
+  const { saveToken } = useContext(AuthContext);
 
   const handleInput = (event) => {
     const targetName = event.target.name;
@@ -20,6 +25,7 @@ export default function Signup() {
     setuserinfo({ ...userinfo, [targetName]: value });
   };
 
+
   const handleSubmit = async (event) => {
     event.preventDefault();
 
@@ -27,15 +33,26 @@ export default function Signup() {
       console.log("Started Signing up");
 
       // Req through fetch api
-      await fetch("http://localhost:3000/signup", {
+      const response = await fetch("http://localhost:3000/signup", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: await JSON.stringify(userinfo),
+        body: JSON.stringify(userinfo),
       });
-
       console.log("Signed Up Successfully");
+
+      // Token generation
+      const res = await response.json();
+      // console.log(`Response recieved: ${JSON.stringify(res)}`);
+      const data = { token: res.token, email: userinfo.email };
+
+      // Saving token
+      saveToken(data);
+      console.log("Saved token Successfully");
+      console.log(localStorage.getItem("authinfo"));
+      navigate("/");
+      
     } catch (error) {
       console.log(`${error} in handleSubmit`);
     }

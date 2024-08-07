@@ -1,11 +1,14 @@
 import { useState } from "react";
 import LoginForm from "../components/LoginForm";
+import { useNavigate } from "react-router-dom";
 
 export default function Login() {
   const [userinfo, setuserinfo] = useState({
     email: "",
     password: "",
   });
+
+  const navigate = useNavigate();
 
   const handleInput = (event) => {
     const targetName = event.target.name;
@@ -21,7 +24,7 @@ export default function Login() {
       console.log("Started Login");
 
       // Req through fetch api
-      await fetch("http://localhost:3000/login", {
+      const response = await fetch("http://localhost:3000/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -30,6 +33,7 @@ export default function Login() {
       });
 
       console.log("Login Successfully");
+      navigate('/');
     } catch (error) {
       console.log(`${error} in handleSubmit`);
     }

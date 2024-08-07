@@ -71,7 +71,7 @@ export default function Menu() {
               <div className="container text-center text-white">
                 <div className="row" style={{margin: '0rem 3rem'}}>
                   {/* Breakfast */}
-                  <div className="col">
+                  <div className="col-sm-12 col-md-6 col-lg-4">
                     <div
                       className="card m-auto shadow-lg p-3 mb-5 rounded"
                       style={{
@@ -108,7 +108,7 @@ export default function Menu() {
                     </div>
                   </div>
                   {/* Lunch */}
-                  <div className="col">
+                  <div className="col-sm-12 col-md-6 col-lg-4">
                     <div
                       className="card m-auto shadow-lg p-3 mb-5 rounded"
                       style={{
@@ -145,7 +145,7 @@ export default function Menu() {
                     </div>
                   </div>
                   {/* Dinner */}
-                  <div className="col">
+                  <div className="col-sm-12 col-md-6 col-lg-4">
                     <div
                       className="card m-auto shadow-lg p-3 mb-5 rounded"
                       style={{

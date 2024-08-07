@@ -27,7 +27,7 @@ export default function SignUpForm({userinfo, handleInput, handleSubmit}) {
                 <div className="row" style={{ margin: "0rem 3rem" }}>
                   {/* Col-1 */}
                   <div
-                    className="col card shadow-lg p-5 mb-5 rounded"
+                    className="col card shadow-lg p-5 mb-4 rounded"
                     style={{
                       height: "fit-content",
                       backgroundColor: "#eeedeb",
@@ -120,7 +120,7 @@ export default function SignUpForm({userinfo, handleInput, handleSubmit}) {
                             onChange={handleInput}
                           />
                         </div>
-                        <div className="col-md-2">
+                        <div className="col-md-4">
                           <label htmlFor="inputAnswer" className="form-label">
                             Branch
                           </label>
@@ -132,19 +132,6 @@ export default function SignUpForm({userinfo, handleInput, handleSubmit}) {
                             value={userinfo.branch}
                             onChange={handleInput}
                           />
-                        </div>
-                        <div className="col-md-2">
-                          <label htmlFor="inputRole" className="form-label">
-                            Role
-                          </label>
-                          <select id="inputRole" className="form-select"
-                          name='role'
-                          value={userinfo.role}
-                          onChange={handleInput}>
-                            <option selected>Select</option>
-                            <option>User</option>
-                            <option>Canteen</option>
-                          </select>
                         </div>
                         <div className="col-12 text-end mt-5">
                           <button type="submit" className="btn btn-outline-danger" style={{width: '9rem', height: '3rem', fontSize: '1.1rem'}}>Sign Up</button>

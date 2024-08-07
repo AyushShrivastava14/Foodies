@@ -1,18 +1,18 @@
 const jwt = require('jsonwebtoken');
 
-const generateToken = (user) => {
+const generateToken = (email) => {
     const payload = {
-        email: user.email
+        email: email
     };
 
-    const secret = 'hmm';
+    const secret = 'Foodies';
     const session = {expiresIn: 180}
 
     return jwt.sign(payload, secret, session);
 }
 
 const verifyToken = (token) => {
-    const secret = 'hmm';
+    const secret = 'Foodies';
 
     try {
         if(jwt.verify(token, secret)) {

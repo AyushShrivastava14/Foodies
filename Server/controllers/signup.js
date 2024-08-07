@@ -1,5 +1,6 @@
 const { insert, remove, update, connect } = require("../database/db");
 const { encrypt, decrypt } = require("../bcrypt/privacy");
+const { generateToken } = require('../token/token')
 
 
 const check = async (data) => {
@@ -54,7 +55,9 @@ const signup = async (req, res) => {
     if (signal === 0) {
       // new user
       await insert(data, 'users');
-      res.send(`Registered new user`);
+      const token = await generateToken(data.email);
+      res.json({valid: 1, token});
+
     } else console.log("User Already Exists");
   } catch (error) {
     console.log(`${error} in sign-up`);

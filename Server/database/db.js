@@ -30,26 +30,13 @@ const readData = async (collection) => {
 
 // For inserting user/data
 const insert = async (userData, collection) => {
-  // const client = await MongoClient.connect(process.env.MONGO_URL);
-  // const coll = client.db('foodies').collection('users');
-
   const { client, coll } = await connect(collection);
 
   // Password Encryption
   userData.password = await encrypt(userData.password);
-  // const newPass = await bcrypt.hash(userData.password, 4);
-  // console.log(userData.password);
-  // console.log(newPass);
 
   // Secret Answer encryption for forgot password
   userData.answer = await encrypt(userData.answer);
-  // const newAns = await bcrypt.hash(userData.answer, 4);
-  // console.log(userData.answer);
-  // console.log(newAns);
-
-  // updating password and answer
-  // userData.password = newPass;
-  // userData.answer = newAns;
 
   // New user entry
   await coll.insertOne(userData);
@@ -58,9 +45,6 @@ const insert = async (userData, collection) => {
 
 // For deleting user/data
 const remove = async (email) => {
-  // const client = await MongoClient.connect(process.env.MONGO_URL);
-  // const coll = client.db('foodies').collection('users');
-
   const { client, coll } = await connect();
 
   // Deleting user
