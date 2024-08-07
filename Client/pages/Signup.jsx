@@ -45,14 +45,19 @@ export default function Signup() {
       // Token generation
       const res = await response.json();
       // console.log(`Response recieved: ${JSON.stringify(res)}`);
-      const data = { token: res.token, email: userinfo.email };
-
-      // Saving token
-      saveToken(data);
-      console.log("Saved token Successfully");
-      console.log(localStorage.getItem("authinfo"));
-      navigate("/");
       
+      if(res.valid === 0) {
+        const data = { token: res.token, email: userinfo.email };
+  
+        // Saving token
+        saveToken(data);
+        console.log("Saved token Successfully");
+        navigate("/");
+      }
+      else {
+        alert('User Already Exists, Please Login');
+        navigate('/login');
+      }
     } catch (error) {
       console.log(`${error} in handleSubmit`);
     }

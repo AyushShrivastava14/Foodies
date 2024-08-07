@@ -56,9 +56,9 @@ const signup = async (req, res) => {
       // new user
       await insert(data, 'users');
       const token = await generateToken(data.email);
-      res.json({valid: 1, token});
+      res.json({valid: 0, token});
 
-    } else console.log("User Already Exists");
+    } else res.json({valid: 5});
   } catch (error) {
     console.log(`${error} in sign-up`);
   }

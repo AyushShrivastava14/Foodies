@@ -4,7 +4,7 @@ export default function LoginForm({ userinfo, handleInput, handleSubmit }) {
       <section
         className="section pt-4"
         id="about-us"
-        style={{ backgroundColor: "#eeedeb", height: "100vh" }}
+        style={{ backgroundColor: "#eeedeb", height: "620px" }}
       >
         <div className="container">
           <div className="grid">

@@ -1,6 +1,7 @@
-import { useState } from "react";
 import LoginForm from "../components/LoginForm";
 import { useNavigate } from "react-router-dom";
+import { useContext, useState } from "react";
+import { AuthContext } from "../context/AuthContext";
 
 export default function Login() {
   const [userinfo, setuserinfo] = useState({
@@ -9,6 +10,7 @@ export default function Login() {
   });
 
   const navigate = useNavigate();
+  const { saveToken } = useContext(AuthContext);
 
   const handleInput = (event) => {
     const targetName = event.target.name;
@@ -29,11 +31,27 @@ export default function Login() {
         headers: {
           "Content-Type": "application/json",
         },
-        body: await JSON.stringify(userinfo),
+        body: JSON.stringify(userinfo),
       });
-
       console.log("Login Successfully");
-      navigate('/');
+
+      const res = await response.json();
+
+      console.log('Verification Started');
+
+      if(res.valid === -1) {
+        const data = { token: res.token, email: userinfo.email };
+        saveToken(data);
+        navigate('/');
+      }
+      else if(res.valid === 1) {
+        alert('Wrong Credentials');
+      }
+      else {
+        alert('No User Found, Please Sign-up');
+        navigate('/signup');
+      }
+      console.log('Verification Ended');
     } catch (error) {
       console.log(`${error} in handleSubmit`);
     }
