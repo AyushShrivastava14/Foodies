@@ -45,7 +45,7 @@ export default function Login() {
         navigate('/');
       }
       else if(res.valid === 1) {
-        alert('Wrong Credentials');
+        alert('Invalid Email or Password');
       }
       else {
         alert('No User Found, Please Sign-up');

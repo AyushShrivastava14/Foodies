@@ -1,5 +1,5 @@
 export default function SignUpForm({userinfo, handleInput, handleSubmit}) {
-  console.log(userinfo);
+  // console.log(userinfo);
   return (
     <>
       <section

@@ -1,7 +1,7 @@
 const {readData} = require('../database/db')
 
-const getFeedbacks = async (req, res) => {
-    res.send(await readData('feedback'));
+const getFeedback = async (req, res) => {
+    res.json(await readData('feedback'));
 }
 
-module.exports = {getFeedbacks};
+module.exports = {getFeedback};

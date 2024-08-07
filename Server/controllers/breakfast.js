@@ -1,7 +1,7 @@
-const {readData} = require('../database/db')
+const { readData } = require('../database/db')
 
 const getbreakfast = async (req, res) => {
-    res.send(await readData('breakfast'));
+    res.json(await readData('breakfast'));
 }
 
 module.exports = {getbreakfast};

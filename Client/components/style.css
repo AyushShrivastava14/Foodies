@@ -61,3 +61,14 @@
     background: rgba(0, 0, 0, 0.3); /* Adjust the opacity as needed */
     pointer-events: none;
 }
+
+
+/* Menu-Style */
+.menu-card {
+  height: fit-content;
+  background-color: #eeedeb;
+  display: flex;
+  align-items: center;
+  border: none;
+  border-style: none;
+}
