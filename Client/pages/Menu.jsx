@@ -1,7 +1,4 @@
-// import Breakfast from "../components/Breakfast"
-// import Lunch from "../components/Lunch"
-// import Dinner from "../components/Dinner"
-import Fetch from '../components/Fetch'
+import MenuFetch from '../components/MenuFetch'
 
 export default function Menu() {
   return (
@@ -69,7 +66,7 @@ export default function Menu() {
                   {/* <Breakfast />
                   <Lunch />
                   <Dinner /> */}
-                  <Fetch />
+                  <MenuFetch />
 
                 </div>
               </div>

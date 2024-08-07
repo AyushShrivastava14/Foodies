@@ -1,4 +1,4 @@
-export default function Feedback() {
+export default function Feedback({fetching}) {
   return (
     <>
       <section
