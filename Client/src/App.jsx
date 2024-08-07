@@ -8,6 +8,7 @@ import Feedback from "../pages/Feedback";
 // import LoginForm from "../components/LoginForm";
 import Signup from "../pages/Signup";
 import Login from "../pages/Login";
+import Logout from "../pages/Logout";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
           <Route path="/feedback" element={<Feedback />}></Route>
           <Route path="/signup" element={<Signup />}></Route>
           <Route path="/login" element={<Login />}></Route>
+          <Route path="/logout" element={<Logout />}></Route>
         </Routes>
       </BrowserRouter>
     </>

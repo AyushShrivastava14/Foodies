@@ -5,7 +5,7 @@ export const AuthContext = createContext("");
 const Authstate = (props) => {
     const [authinfo, setToken] = useState(() => {
       const storedAuthinfo = localStorage.getItem("authinfo");
-      return storedAuthinfo ? JSON.parse(storedAuthinfo) : {};
+      return storedAuthinfo ? JSON.parse(storedAuthinfo) : null;
     });
 
     const saveToken = (authinfo1) => {
