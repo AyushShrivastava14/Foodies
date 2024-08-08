@@ -72,3 +72,14 @@
   border: none;
   border-style: none;
 }
+
+
+/* Feedback-Style */
+.feedback-card {
+    height: fit-content;
+    background-color: #eeedeb;
+    display: flex;
+    align-items: center;
+    border: none;
+    border-style: none;
+}

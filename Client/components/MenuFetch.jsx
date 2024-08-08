@@ -20,5 +20,3 @@ export default function MenuFetch() {
     <Dinner menuFetching={menuFetching} />
   </>
 }
-
-

@@ -63,9 +63,6 @@ export default function Menu() {
             <div className="g-col-6">
               <div className="container text-center text-white">
                 <div className="row" style={{margin: '0rem 3rem'}}>
-                  {/* <Breakfast />
-                  <Lunch />
-                  <Dinner /> */}
                   <MenuFetch />
 
                 </div>

@@ -1,16 +1,16 @@
 import { useState, useEffect } from "react";
 
-export default function Lunch({ fetching }) {
+export default function Lunch({ menuFetching }) {
   const [data, setData] = useState({});
 
   useEffect(() => {
     const fetchData = async () => {
-      const result = await fetching("lunch");
+      const result = await menuFetching("lunch");
       setData(result);
     };
 
     fetchData();
-  }, [fetching]);
+  }, [menuFetching]);
 
   return (
     <>
