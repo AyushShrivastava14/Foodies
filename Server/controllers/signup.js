@@ -5,8 +5,6 @@ const { generateToken } = require('../token/token')
 
 const check = async (data) => {
   try {
-    // const filter = {};
-
     const { client, coll } = await connect('users');
     // console.log('connected');
 

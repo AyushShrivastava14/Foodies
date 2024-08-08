@@ -42,8 +42,16 @@ export default function Login() {
       if(res.valid === -1) {
         const data = { token: res.token, email: userinfo.email };
         saveToken(data);
-        navigate('/');
         setTimeout(deleteToken, 300*1000);
+
+        // Navigating according to userType
+        if(res.type === "admin") {
+          navigate('/admin');
+        }
+        else if(res.type === "canteen") {
+          navigate('/canteen');
+        }
+        else navigate('/user');
       }
       else if(res.valid === 1) {
         alert('Invalid Email or Password');

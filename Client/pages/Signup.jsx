@@ -10,7 +10,7 @@ export default function Signup() {
     branch: "",
     question: "",
     answer: "",
-    role: "User",
+    role: "user",
     email: "",
     password: "",
   });

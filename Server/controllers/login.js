@@ -2,6 +2,23 @@
 const {check} = require('./signup');
 const { generateToken } = require('../token/token')
 
+const checkUserType = async (data) => {
+    try {    
+        const { client, coll } = await connect('users');
+        // console.log('connected');
+    
+        const user = await coll.findOne({ email: data.email });
+        await client.close();
+
+        if(user.role === "admin") return "admin";
+        else if(user.role === "canteen") return "canteen";
+        else return "user";
+    }
+    catch(error) {
+        console.log(`${error} in checkUserType()`);
+    }
+} 
+
 const login = async(req, res) => {
     try {
         const data = req.body;
@@ -16,7 +33,10 @@ const login = async(req, res) => {
             // res.status(200).send(`Welcome! ${username}`);
             // console.log(`Welcome ${username}`);
             const token = await generateToken(data.email);
-            res.json({valid: -1, token});
+            // res.json({valid: -1, token});
+
+            const type = await checkUserType(data);
+            res.json({valid: -1, token, type});
         }
         else if(signal === 0){     // new user
             res.json({valid: 0});
