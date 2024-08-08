@@ -16,7 +16,7 @@ export default function Signup() {
   });
 
   const navigate = useNavigate();
-  const { saveToken } = useContext(AuthContext);
+  const { saveToken, deleteToken } = useContext(AuthContext);
 
   const handleInput = (event) => {
     const targetName = event.target.name;
@@ -53,6 +53,7 @@ export default function Signup() {
         saveToken(data);
         console.log("Saved token Successfully");
         navigate("/");
+        setTimeout(deleteToken, 300*1000);
       }
       else {
         alert('User Already Exists, Please Login');

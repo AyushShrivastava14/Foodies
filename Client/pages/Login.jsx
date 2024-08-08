@@ -1,6 +1,6 @@
 import LoginForm from "../components/LoginForm";
 import { useNavigate } from "react-router-dom";
-import { useContext, useState } from "react";
+import { useContext, useState, useEffect } from "react";
 import { AuthContext } from "../context/AuthContext";
 
 export default function Login() {
@@ -10,7 +10,7 @@ export default function Login() {
   });
 
   const navigate = useNavigate();
-  const { saveToken } = useContext(AuthContext);
+  const { saveToken, deleteToken } = useContext(AuthContext);
 
   const handleInput = (event) => {
     const targetName = event.target.name;
@@ -43,6 +43,7 @@ export default function Login() {
         const data = { token: res.token, email: userinfo.email };
         saveToken(data);
         navigate('/');
+        setTimeout(deleteToken, 300*1000);
       }
       else if(res.valid === 1) {
         alert('Invalid Email or Password');

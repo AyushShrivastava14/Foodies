@@ -6,9 +6,9 @@ const generateToken = (email) => {
     };
 
     const secret = 'Foodies';
-    const session = {expiresIn: 180}
+    const options = {expiresIn: 300};
 
-    return jwt.sign(payload, secret, session);
+    return jwt.sign(payload, secret, options);
 }
 
 const verifyToken = (token) => {
