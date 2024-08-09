@@ -1,4 +1,3 @@
-// const bcrypt = require('bcrypt');
 const { encrypt, decrypt } = require("../bcrypt/privacy");
 const MongoClient = require("mongodb").MongoClient;
 require("dotenv").config();

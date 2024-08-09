@@ -1,7 +1,12 @@
 const { readData } = require('../database/db')
 
-const getbreakfast = async (req, res) => {
-    res.json(await readData('breakfast'));
+const getBreakfast = async (req, res) => {
+    try {
+        res.json(await readData('breakfast'));
+    }
+    catch(error) {
+        console.log(`${error} in getBreakfast`);
+    }
 }
 
-module.exports = {getbreakfast};
+module.exports = {getBreakfast};

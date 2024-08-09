@@ -1,4 +1,4 @@
-// const { insert, remove, update} = require('../database/db');
+const { connect } = require('../database/db');
 const {check} = require('./signup');
 const { generateToken } = require('../token/token')
 

@@ -15,7 +15,15 @@ const DataManipulation = (props) => {
           },
           body: JSON.stringify(data),
         });
-        alert(`Inserted in ${collection}`);
+
+        const res = await response.json();
+
+        if(res.entryCheck === 0) {
+          alert(`Added ${collection} successfully`);
+        }
+        else {
+          alert(`Entry Already Exists`);
+        }
     }
     catch(error) {
         console.log(`${error} in insertion`);
