@@ -52,7 +52,7 @@ export default function Signup() {
         // Saving token
         saveToken(data);
         console.log("Saved token Successfully");
-        navigate("/");
+        navigate("/user");
         setTimeout(deleteToken, 300*1000);
       }
       else {

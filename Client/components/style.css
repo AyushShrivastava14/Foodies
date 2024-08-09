@@ -84,3 +84,16 @@
     border: none;
     border-style: none;
 }
+
+
+/* buttons */
+.button {
+  margin-right: 2rem;
+  background-color: white;
+  border-style: none;
+}
+
+.button:hover {
+  background-color: #FFAD60;
+  scale: 1.03;
+}

@@ -1,7 +1,7 @@
 import bg from "../Videos/Home_vid.mp4";
-import img1 from "../Images/Profile-1.png";
-import img2 from "../Images/Profile-2.png";
-import img3 from "../Images/Profile-3.png";
+import img1 from "../Images/Ayush.jpeg";
+import img2 from "../Images/Hardik.jpeg";
+import img3 from "../Images/Harsh.jpeg";
 import linkedin from "../Images/linkedin.png";
 import github from "../Images/github.png";
 
@@ -29,13 +29,6 @@ export default function Home() {
               FOODIES
             </h1>
             <h2>Connecting You And Canteen</h2>
-            {/* <p
-              className="my-5 fw-normal w-50"
-              style={{ fontSize: "25px", textAlign: "center" }}
-            >
-              Easing up canteen operations with our app, ensuring meal
-              management and satisfaction.
-            </p> */}
           </div>
         </div>
       </section>
