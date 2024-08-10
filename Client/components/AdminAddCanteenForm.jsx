@@ -1,13 +1,13 @@
-export default function AddFeedbackForm({
+export default function AdminAddCanteenForm({
   userinfo,
   handleInput,
   handleSubmit,
 }) {
-  console.log(userinfo);
+  // console.log(userinfo);
   return (
     <>
       <section
-        className="section pb-2"
+        className="section"
         id="about-us"
         style={{ backgroundColor: "#eeedeb" }}
       >
@@ -15,15 +15,16 @@ export default function AddFeedbackForm({
           <div className="grid">
             <div className="g-col-6">
               <h2
-                className="m-auto mb-5"
+                className="m-auto mb-5 pt-3"
                 style={{
                   fontSize: "3rem",
                   paddingBottom: "1rem",
+                  marginLeft: '4rem',
                   width: "fit-content",
                   borderBottom: "5px solid orange",
                 }}
               >
-                Add Feedback
+                Add Canteen Person
               </h2>
             </div>
             <div className="g-col-6">
@@ -47,52 +48,62 @@ export default function AddFeedbackForm({
                         method="POST"
                         onSubmit={handleSubmit}
                       >
-                        <div className="col-md-8">
-                          <label className="form-label">Dish Name</label>
+                        <div className="col-md-12">
+                          <label htmlFor="inputName4" className="form-label">
+                            Name
+                          </label>
                           <input
                             type="text"
                             className="form-control"
-                            placeholder="Enter Dish Name (Ex: Butter Chicken)"
-                            name="dishName"
-                            value={userinfo.dishName}
+                            placeholder="Enter Your Name"
+                            name="name"
+                            value={userinfo.name}
                             onChange={handleInput}
                           />
                         </div>
-                        <div className="col-md-4">
-                          <label className="form-label">
-                            Rating (Out of 5)
-                          </label>
+                        <div className="col-md-6">
+                          <label className="form-label">Email</label>
                           <input
-                            type="number"
+                            type="email"
                             className="form-control"
-                            placeholder="Enter Rating"
-                            name="rating"
-                            value={userinfo.rating}
+                            placeholder="Enter Your College Email"
+                            name="email"
+                            value={userinfo.email}
                             onChange={handleInput}
                           />
                         </div>
-                        <div className="col-md-12 mt-4">
-                          {/* <label className="form-label">
-                              Feedback
-                            </label>
-                            <input
-                              type="text"
-                              className="form-control"
-                              placeholder="Write Your Feedback/Comment"
-                              name='comment'
-                              // value={userinfo.comment}
-                              onChange={handleInput}
-                            /> */}
-                          <label className="form-label">Feedback</label>
-                          <textarea
+                        <div className="col-md-6">
+                          <label className="form-label">Password</label>
+                          <input
+                            type="password"
                             className="form-control"
-                            id="exampleFormControlTextarea1"
-                            rows="4"
-                            placeholder="Write Your Feedback/Comment"
-                            name="comment"
-                            value={userinfo.comment}
+                            placeholder="Password"
+                            name="password"
+                            value={userinfo.password}
                             onChange={handleInput}
-                          ></textarea>
+                          />
+                        </div>
+                        <div className="col-md-6">
+                          <label className="form-label">Question</label>
+                          <input
+                            type="text"
+                            className="form-control"
+                            placeholder="Enter a question account recovery"
+                            name="question"
+                            value={userinfo.question}
+                            onChange={handleInput}
+                          />
+                        </div>
+                        <div className="col-md-6">
+                          <label className="form-label">Secret Answer</label>
+                          <input
+                            type="text"
+                            className="form-control"
+                            placeholder="Answer"
+                            name="answer"
+                            value={userinfo.answer}
+                            onChange={handleInput}
+                          />
                         </div>
                         <div className="col-12 text-end mt-5">
                           <button
@@ -104,7 +115,7 @@ export default function AddFeedbackForm({
                               fontSize: "1.1rem",
                             }}
                           >
-                            Add Feedback
+                            Add
                           </button>
                         </div>
                       </form>

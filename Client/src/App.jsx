@@ -4,6 +4,7 @@ import { AuthContext } from "../context/AuthContext";
 import NotFound from "../pages/NotFound";
 import UserApp from "./Apps/UserApp";
 import ViewApp from "./Apps/ViewApp";
+import AdminApp from "./Apps/AdminApp";
 
 function App() {
   const { authinfo } = useContext(AuthContext);
@@ -14,12 +15,16 @@ function App() {
           {authinfo === null ? (<>
             <Route path="/*" element={<ViewApp />} />
             <Route path="/user/*" element={<NotFound />}></Route>
+            <Route path="/admin/*" element={<NotFound />}></Route>
+
+            <Route path="/feedback" element={<NotFound />}></Route>
+            <Route path="/cart" element={<NotFound />}></Route>
+            <Route path="/logout" element={<NotFound />}></Route>
           </>)
         : (<>
-          <Route path="/*" element={<NotFound />} />
           <Route path="/user/*" element={<UserApp />} />
-          {/* <Route path="/admin/*" element={<AdminApp />} />
-          <Route path="/canteen/*" element={<CanteenApp />} /> */}
+          <Route path="/admin/*" element={<AdminApp />} />
+          {/* <Route path="/canteen/*" element={<CanteenApp />} /> */}
         </>)}
         </Routes>
       </BrowserRouter>

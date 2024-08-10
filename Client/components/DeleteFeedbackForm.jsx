@@ -1,4 +1,4 @@
-export default function AddFeedbackForm({
+export default function DeleteFeedbackForm({
   userinfo,
   handleInput,
   handleSubmit,
@@ -9,13 +9,13 @@ export default function AddFeedbackForm({
       <section
         className="section pb-2"
         id="about-us"
-        style={{ backgroundColor: "#eeedeb" }}
+        style={{ backgroundColor: "#eeedeb", height: '620px' }}
       >
-        <div className="container">
+        <div className="container w-50">
           <div className="grid">
             <div className="g-col-6">
               <h2
-                className="m-auto mb-5"
+                className="m-auto mb-5 pt-5"
                 style={{
                   fontSize: "3rem",
                   paddingBottom: "1rem",
@@ -23,7 +23,7 @@ export default function AddFeedbackForm({
                   borderBottom: "5px solid orange",
                 }}
               >
-                Add Feedback
+                Delete Feedback
               </h2>
             </div>
             <div className="g-col-6">
@@ -47,7 +47,7 @@ export default function AddFeedbackForm({
                         method="POST"
                         onSubmit={handleSubmit}
                       >
-                        <div className="col-md-8">
+                        <div className="col-md-12">
                           <label className="form-label">Dish Name</label>
                           <input
                             type="text"
@@ -58,53 +58,17 @@ export default function AddFeedbackForm({
                             onChange={handleInput}
                           />
                         </div>
-                        <div className="col-md-4">
-                          <label className="form-label">
-                            Rating (Out of 5)
-                          </label>
-                          <input
-                            type="number"
-                            className="form-control"
-                            placeholder="Enter Rating"
-                            name="rating"
-                            value={userinfo.rating}
-                            onChange={handleInput}
-                          />
-                        </div>
-                        <div className="col-md-12 mt-4">
-                          {/* <label className="form-label">
-                              Feedback
-                            </label>
-                            <input
-                              type="text"
-                              className="form-control"
-                              placeholder="Write Your Feedback/Comment"
-                              name='comment'
-                              // value={userinfo.comment}
-                              onChange={handleInput}
-                            /> */}
-                          <label className="form-label">Feedback</label>
-                          <textarea
-                            className="form-control"
-                            id="exampleFormControlTextarea1"
-                            rows="4"
-                            placeholder="Write Your Feedback/Comment"
-                            name="comment"
-                            value={userinfo.comment}
-                            onChange={handleInput}
-                          ></textarea>
-                        </div>
                         <div className="col-12 text-end mt-5">
                           <button
                             type="submit"
                             className="btn btn-outline-danger"
                             style={{
-                              width: "9rem",
+                              width: "fit-content",
                               height: "3rem",
                               fontSize: "1.1rem",
                             }}
                           >
-                            Add Feedback
+                            Delete Feedback
                           </button>
                         </div>
                       </form>

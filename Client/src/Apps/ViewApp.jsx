@@ -14,7 +14,7 @@ function ViewApp() {
             <Route path="/" element={<Home />}></Route>
             <Route path="/menu" element={<Menu />}></Route>
             <Route path="/signup" element={<Signup />}></Route>
-            <Route path="/login" element={<Login />}></Route>       
+            <Route path="/login" element={<Login />}></Route>    
         </Routes>
     </>
   );

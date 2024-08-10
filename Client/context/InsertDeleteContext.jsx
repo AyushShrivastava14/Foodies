@@ -42,7 +42,15 @@ const DataManipulation = (props) => {
           },
           body: JSON.stringify(data),
         });
-        alert(`Deleted ${data.dishName} from ${collection}`);
+
+        const res = await response.json();
+
+        if(res.entryCheck === 0) {
+          alert(`${collection} doesn't exists`);
+        }
+        else {
+          alert(`Deleted ${collection} successfully!`);
+        }
     }
     catch(error) {
         console.log(`${error} in deletion`);

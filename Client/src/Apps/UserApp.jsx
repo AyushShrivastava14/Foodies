@@ -6,6 +6,7 @@ import UserNavbar from "../../UsersTypes/User/UserNavbar";
 import Menu from "../../pages/Menu";
 import UserFeedback from "../../UsersTypes/User/UserFeedback";
 import AddFeedback from "../../pages/AddFeedback";
+import DeleteFeedback from "../../pages/DeleteFeedback";
 
 
 function UserApp() {
@@ -18,7 +19,8 @@ function UserApp() {
             <Route path="/cart" element={<Cart />}></Route>
             <Route path="/feedback" element={<UserFeedback />}></Route>
             <Route path="/addfeedback" element={<AddFeedback />}></Route>
-            <Route path="/logout" element={<Logout />}></Route>          
+            <Route path="/deletefeedback" element={<DeleteFeedback />}></Route>
+            <Route path="/logout" element={<Logout />}></Route>  
         </Routes>
     </>
   );

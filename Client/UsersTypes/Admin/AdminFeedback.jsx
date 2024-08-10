@@ -1,8 +1,7 @@
 import { useNavigate } from "react-router-dom";
-// import Feedback from "../../pages/Feedback";
 import FeedbackFetch from "../../components/FeedbackFetch";
 
-export default function UserFeedback() {
+export default function AdminFeedback() {
   const navigate = useNavigate();
   return (
     <>
@@ -31,16 +30,9 @@ export default function UserFeedback() {
                   </div>
                   <div className="col text-end">
                     <button
-                      className="btn shadow p-3 rounded button me-3 mb-3"
+                      className="btn shadow p-3 rounded button mb-3"
                       type="button"
-                      onClick={() => navigate("/user/addfeedback")}
-                    >
-                      Write Feedback
-                    </button>
-                    <button
-                      className="btn shadow p-3 rounded button mb-3 me-2"
-                      type="button"
-                      onClick={() => navigate("/user/deletefeedback")}
+                      onClick={() => navigate("/admin/deletefeedback")}
                     >
                       Delete Feedback
                     </button>
@@ -54,28 +46,6 @@ export default function UserFeedback() {
           </div>
         </div>
       </section>
-      {/* <section style={{ backgroundColor: "#eeedeb" }}>
-        <div className="container">
-          <div className="row text-end">
-            <div className="col">
-              <button
-                className="btn shadow p-3 mb-5 rounded button"
-                type="button"
-                onClick={() => navigate("/user/addfeedback")}
-              >
-                Write Feedback
-              </button>
-              <button
-                className="btn shadow p-3 mb-5 rounded button"
-                type="button"
-                onClick={() => navigate("/user/deletefeedback")}
-              >
-                Delete Feedback
-              </button>
-            </div>
-          </div>
-        </div>
-      </section> */}
     </>
   );
 }

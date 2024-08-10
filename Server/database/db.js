@@ -42,18 +42,31 @@ const insert = async (userData, collection) => {
   await client.close();
 };
 
-// For deleting user/data
-const remove = async (email) => {
-  const { client, coll } = await connect();
+// For deleting user/data  (For Admin only)
+const remove = async (userinfo) => {
+  const { client, coll } = await connect('users');
 
-  // Deleting user
-  await coll.deleteOne({ email: email });
-  await client.close();
+  const data = coll.findOne({email: userinfo.email});
+
+  if(data) {
+      if(data.role === 'admin') {
+        return -1;          // can't delete admin
+      }
+      else {
+        // Deleting user
+        await coll.deleteOne({ email: userinfo.email });
+        await client.close();
+        return 1;          // Successfully deleted user
+      }
+  }
+  else {
+    return 0;        // Entry/user Doesn't exist
+  }
 };
 
 // For Updating details
-const update = async (data) => {
-  const { client, coll } = await connect();
+const update = async (data, collection) => {
+  const { client, coll } = await connect(collection);
 
   // Updating user
   await coll.updateOne(

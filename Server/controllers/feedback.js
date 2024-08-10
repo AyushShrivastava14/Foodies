@@ -48,4 +48,26 @@ const addFeedback = async (req, res) => {
   }
 };
 
-module.exports = { getFeedback, addFeedback };
+const deleteFeedback = async (req, res) => {
+  try {
+    const { client, coll } = await connect("feedback");
+
+    const data = req.body;
+    const entryCheck = await doesExist(data);
+
+    if(entryCheck === 0) {
+        // Feedback doesn't exists
+        res.json({entryCheck: 0});
+    }
+    else {
+      // Feedback Exists
+      await coll.deleteOne({dishName: data.dishName, email: data.email});
+      await client.close();
+        res.json({entryCheck: 1});
+    }
+  } catch (error) {
+    console.log(`${error} in addFeedback`);
+  }
+};
+
+module.exports = { getFeedback, addFeedback, deleteFeedback };
