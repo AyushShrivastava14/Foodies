@@ -83,12 +83,11 @@ export default function Home() {
                         <h3 className="card-title mb-4">Ayush Shrivastava</h3>
                         <p
                           className="card-text p-1"
-                          style={{ fontSize: "0.9rem", textAlign: "justify" }}
+                          style={{ fontSize: "1rem", textAlign: "center" }}
                         >
-                          Lorem ipsum dolor sit amet, consectetur adipisicing
-                          elit. Distinctio, vero?
-                          <div className="mt-4 text-end">
-                          <a href="" style={{marginRight: '2rem'}}>
+                          Final Year, CSE
+                          <div className="mt-4 text-center">
+                          <a href="https://www.linkedin.com/in/ayush-shrivastava-693407230" target="_blank" style={{marginRight: '2rem'}}>
                             <img
                               className="rounded-circle"
                               src={linkedin}
@@ -96,7 +95,7 @@ export default function Home() {
                               style={{ width: "40px", height: "40px"}}
                             />
                           </a>
-                          <a href="">
+                          <a href="https://github.com/AyushShrivastava14" target="_blank">
                             <img
                               className="rounded-circle"
                               src={github}
@@ -137,12 +136,11 @@ export default function Home() {
                         <h3 className="card-title mb-4">Hardik Gupta</h3>
                         <p
                           className="card-text p-1"
-                          style={{ fontSize: "0.9rem", textAlign: "justify" }}
+                          style={{ fontSize: "1rem", textAlign: "center" }}
                         >
-                          Lorem ipsum dolor sit amet, consectetur adipisicing
-                          elit. Distinctio, vero?
-                          <div className="mt-4 text-end">
-                          <a href="" style={{marginRight: '2rem'}}>
+                          Final Year, CSE
+                          <div className="mt-4 text-center">
+                          <a href="https://www.linkedin.com/in/hardik-g-15a806237/" target="_blank" style={{marginRight: '2rem'}}>
                             <img
                               className="rounded-circle"
                               src={linkedin}
@@ -150,7 +148,7 @@ export default function Home() {
                               style={{ width: "40px", height: "40px"}}
                             />
                           </a>
-                          <a href="">
+                          <a href="https://github.com/ghardik25" target="_blank">
                             <img
                               className="rounded-circle"
                               src={github}
@@ -191,12 +189,11 @@ export default function Home() {
                         <h3 className="card-title mb-4">Harsh Dixit</h3>
                         <p
                           className="card-text p-1"
-                          style={{ fontSize: "0.9rem", textAlign: "justify" }}
+                          style={{ fontSize: "1rem", textAlign: "center" }}
                         >
-                          Lorem ipsum dolor sit amet, consectetur adipisicing
-                          elit. Distinctio, vero?
-                          <div className="mt-4 text-end">
-                          <a href="" style={{marginRight: '2rem'}}>
+                          Final Year, CSE
+                          <div className="mt-4 text-center">
+                          <a href="https://www.linkedin.com/in/harsh-dixit-a89756203/" target="_blank" style={{marginRight: '2rem'}}>
                             <img
                               className="rounded-circle"
                               src={linkedin}
@@ -204,7 +201,7 @@ export default function Home() {
                               style={{ width: "40px", height: "40px"}}
                             />
                           </a>
-                          <a href="">
+                          <a href="https://github.com/Harshdixit654" target="_blank">
                             <img
                               className="rounded-circle"
                               src={github}

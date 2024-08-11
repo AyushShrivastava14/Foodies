@@ -54,7 +54,7 @@ const signup = async (req, res) => {
       // new user
       await insert(data, 'users');
       const token = await generateToken(data.email);
-      res.json({valid: 0, token});
+      res.json({valid: 0, token, role: data.role});
 
     } else res.json({valid: 5});
   } catch (error) {

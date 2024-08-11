@@ -10,7 +10,7 @@ const Authstate = (props) => {
 
     const saveToken = (authinfo1) => {
       setToken((prevstate) => {
-        const newState = { ...prevstate, token: authinfo1.token, email: authinfo1.email };
+        const newState = { ...prevstate, token: authinfo1.token, email: authinfo1.email, role: authinfo1.role };
         localStorage.setItem("authinfo", JSON.stringify(newState));
         return newState;
       });

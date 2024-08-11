@@ -47,7 +47,7 @@ export default function Signup() {
       // console.log(`Response recieved: ${JSON.stringify(res)}`);
       
       if(res.valid === 0) {
-        const data = { token: res.token, email: userinfo.email };
+        const data = { token: res.token, email: userinfo.email, role: res.role };
   
         // Saving token
         saveToken(data);

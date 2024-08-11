@@ -1,5 +1,4 @@
 import { useNavigate } from "react-router-dom";
-// import Feedback from "../../pages/Feedback";
 import FeedbackFetch from "../../components/FeedbackFetch";
 
 export default function UserFeedback() {
@@ -54,28 +53,6 @@ export default function UserFeedback() {
           </div>
         </div>
       </section>
-      {/* <section style={{ backgroundColor: "#eeedeb" }}>
-        <div className="container">
-          <div className="row text-end">
-            <div className="col">
-              <button
-                className="btn shadow p-3 mb-5 rounded button"
-                type="button"
-                onClick={() => navigate("/user/addfeedback")}
-              >
-                Write Feedback
-              </button>
-              <button
-                className="btn shadow p-3 mb-5 rounded button"
-                type="button"
-                onClick={() => navigate("/user/deletefeedback")}
-              >
-                Delete Feedback
-              </button>
-            </div>
-          </div>
-        </div>
-      </section> */}
     </>
   );
 }

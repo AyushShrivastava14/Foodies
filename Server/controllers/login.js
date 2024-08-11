@@ -35,8 +35,8 @@ const login = async(req, res) => {
             const token = await generateToken(data.email);
             // res.json({valid: -1, token});
 
-            const type = await checkUserType(data);
-            res.json({valid: -1, token, type});
+            const role = await checkUserType(data);
+            res.json({valid: -1, token, role});
         }
         else if(signal === 0){     // new user
             res.json({valid: 0});

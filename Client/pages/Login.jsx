@@ -40,15 +40,15 @@ export default function Login() {
       console.log('Verification Started');
 
       if(res.valid === -1) {
-        const data = { token: res.token, email: userinfo.email };
+        const data = { token: res.token, email: userinfo.email, role: res.role };
         saveToken(data);
         setTimeout(deleteToken, 300*1000);
 
         // Navigating according to userType
-        if(res.type === "admin") {
+        if(res.role === "admin") {
           navigate('/admin');
         }
-        else if(res.type === "canteen") {
+        else if(res.role === "canteen") {
           navigate('/canteen');
         }
         else navigate('/user');
