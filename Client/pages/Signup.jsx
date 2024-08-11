@@ -2,6 +2,7 @@ import SignUpForm from "../components/SignUpForm";
 import { useNavigate } from "react-router-dom";
 import { useContext, useState } from "react";
 import { AuthContext } from "../context/AuthContext";
+import { TimerContext } from "../context/TimerContext";
 
 export default function Signup() {
   const [userinfo, setuserinfo] = useState({
@@ -17,6 +18,7 @@ export default function Signup() {
 
   const navigate = useNavigate();
   const { saveToken, deleteToken } = useContext(AuthContext);
+  const { newTimer } = useContext(TimerContext);
 
   const handleInput = (event) => {
     const targetName = event.target.name;
@@ -53,7 +55,10 @@ export default function Signup() {
         saveToken(data);
         console.log("Saved token Successfully");
         navigate("/user");
-        setTimeout(deleteToken, 300*1000);
+
+        // Setting a new timer
+        // setTimeout(deleteToken, 300*1000);
+        newTimer(300);
       }
       else {
         alert('User Already Exists, Please Login');

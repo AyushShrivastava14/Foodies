@@ -2,6 +2,7 @@ import LoginForm from "../components/LoginForm";
 import { useNavigate } from "react-router-dom";
 import { useContext, useState, useEffect } from "react";
 import { AuthContext } from "../context/AuthContext";
+import { TimerContext } from "../context/TimerContext";
 
 export default function Login() {
   const [userinfo, setuserinfo] = useState({
@@ -11,6 +12,7 @@ export default function Login() {
 
   const navigate = useNavigate();
   const { saveToken, deleteToken } = useContext(AuthContext);
+  const { newTimer } = useContext(TimerContext);
 
   const handleInput = (event) => {
     const targetName = event.target.name;
@@ -42,7 +44,10 @@ export default function Login() {
       if(res.valid === -1) {
         const data = { token: res.token, email: userinfo.email, role: res.role };
         saveToken(data);
-        setTimeout(deleteToken, 300*1000);
+
+        // Setting up new timer
+        // setTimeout(deleteToken, 300*1000);
+        newTimer(300);
 
         // Navigating according to userType
         if(res.role === "admin") {
