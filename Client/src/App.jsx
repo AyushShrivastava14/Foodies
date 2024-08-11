@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { useContext } from "react";
 import { AuthContext } from "../context/AuthContext";
 import NotFound from "../pages/NotFound";
@@ -6,6 +6,7 @@ import UserApp from "./Apps/UserApp";
 import ViewApp from "./Apps/ViewApp";
 import AdminApp from "./Apps/AdminApp";
 import NotAccessible from "../pages/NotAccessible";
+import CanteenApp from "./Apps/CanteenApp";
 
 function App() {
   const { authinfo } = useContext(AuthContext);
@@ -18,6 +19,7 @@ function App() {
               <Route path="/*" element={<ViewApp />} />
               <Route path="/user/*" element={<NotFound />}></Route>
               <Route path="/admin/*" element={<NotFound />}></Route>
+              <Route path="/canteen/*" element={<NotFound />}></Route>
 
               <Route path="/feedback" element={<NotFound />}></Route>
               <Route path="/cart" element={<NotFound />}></Route>
@@ -29,6 +31,7 @@ function App() {
                 <>
                   <Route path="/user/*" element={<UserApp />} />
                   <Route path="/admin/*" element={<NotAccessible />} />
+                  <Route path="/canteen/*" element={<NotAccessible />} />
                   <Route path="/*" element={<NotAccessible />} />
                 </>
               ) : (
@@ -41,6 +44,7 @@ function App() {
                 <>
                   <Route path="/admin/*" element={<AdminApp />} />
                   <Route path="/user/*" element={<NotAccessible />} />
+                  <Route path="/canteen/*" element={<NotAccessible />} />
                   <Route path="/*" element={<NotAccessible />} />
                 </>
               ) : (
@@ -48,7 +52,19 @@ function App() {
                   <Route path="/admin/*" element={<NotFound />} />
                 </>
               )}
-              {/* <Route path="/canteen/*" element={<CanteenApp />} /> */}
+
+              {authinfo.role === "canteen" ? (
+                <>
+                  <Route path="/canteen/*" element={<CanteenApp />} />
+                  <Route path="/user/*" element={<NotAccessible />} />
+                  <Route path="/admin/*" element={<NotAccessible />} />
+                  <Route path="/*" element={<NotAccessible />} />
+                </>
+              ) : (
+                <>
+                  <Route path="/canteen/*" element={<NotFound />} />
+                </>
+              )}
             </>
           )}
         </Routes>

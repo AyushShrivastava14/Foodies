@@ -44,7 +44,8 @@ const insert = async (userData, collection) => {
 
 // For deleting user/data  (For Admin only)
 const remove = async (userinfo) => {
-  const { client, coll } = await connect('users');
+  try {
+    const { client, coll } = await connect('users');
 
   const data = coll.findOne({email: userinfo.email});
 
@@ -61,6 +62,10 @@ const remove = async (userinfo) => {
   }
   else {
     return 0;        // Entry/user Doesn't exist
+  }
+  }
+  catch(error) {
+    console.log(`${error} in remove()`);
   }
 };
 
@@ -84,4 +89,67 @@ const update = async (data, collection) => {
   await client.close();
 };
 
-module.exports = { insert, remove, update, connect, readData };
+
+const itemCheck = async (data, collection) => {
+    try {
+      const { client, coll } = await connect(collection);
+      const check = await coll.findOne({dishName: data.dishName});
+      
+      if(check) {
+        return 1;       // Item already Exists
+      }
+      else {
+        return 0;       // Doesn't exists
+      }
+    }
+    catch(error) {
+      console.log(`${error} in itemCheck()`);
+    }
+}
+
+
+// For adding items
+const addItem = async (userData, collection) => {
+  try {
+    const check = await itemCheck(userData, collection);
+
+    if(check === 1) {
+      return 1;
+    }
+    else {
+      // New item entry
+      const { client, coll } = await connect(collection);
+      await coll.insertOne(userData);
+      await client.close();
+      return 0;
+    }
+  }
+  catch(error) {
+    console.log(`${error} in addItem()`);
+  }
+};
+
+
+// For deleting items
+const deleteItem = async (userData, collection) => {
+  try {
+    const check = await itemCheck(userData, collection);
+
+    if(check === 1) {
+      // Deleting entry
+      const { client, coll } = await connect(collection);
+      await coll.deleteOne({dishName: userData.dishName});
+      await client.close();
+      return 1;
+    }
+    else {
+      return 0;
+    }
+  }
+  catch(error) {
+    console.log(`${error} in deleteItem()`);
+  }
+};
+
+
+module.exports = { insert, remove, update, connect, readData, addItem, itemCheck, deleteItem };

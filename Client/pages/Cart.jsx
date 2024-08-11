@@ -18,7 +18,7 @@ export default function Cart() {
                   borderBottom: "5px solid orange",
                 }}
               >
-                Orders
+                Cart
               </h2>
             </div>
             <div className="g-col-6">

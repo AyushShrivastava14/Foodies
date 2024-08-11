@@ -5,9 +5,9 @@ const router = express.Router();
 const { signup } = require('../controllers/signup');
 const { login } = require('../controllers/login');
 const { getFeedback, addFeedback, deleteFeedback } = require('../controllers/feedback');
-const { getBreakfast } = require('../controllers/breakfast');
-const { getLunch } = require('../controllers/lunch');
-const { getDinner } = require('../controllers/dinner');
+const { getBreakfast, addBreakfast, deleteBreakfast } = require('../controllers/breakfast');
+const { getLunch, addLunch, deleteLunch } = require('../controllers/lunch');
+const { getDinner, addDinner, deleteDinner } = require('../controllers/dinner');
 const { deleteUser } = require('../controllers/deleteuser');
 
 
@@ -19,6 +19,12 @@ router.route('/login').post(login);
 router.route('/addfeedback').post(addFeedback);
 router.route('/deletefeedback').post(deleteFeedback);
 router.route('/deleteuser').post(deleteUser);
+router.route('/addbreakfast').post(addBreakfast);
+router.route('/addlunch').post(addLunch);
+router.route('/adddinner').post(addDinner);
+router.route('/deletebreakfast').post(deleteBreakfast);
+router.route('/deletelunch').post(deleteLunch);
+router.route('/deletedinner').post(deleteDinner);
 
 // GET routes
 router.route('/getfeedback').get(getFeedback);

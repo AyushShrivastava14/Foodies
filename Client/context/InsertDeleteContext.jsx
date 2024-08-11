@@ -18,7 +18,7 @@ const DataManipulation = (props) => {
 
         const res = await response.json();
 
-        if(res.entryCheck === 0) {
+        if(res.entryCheck === 0) {                      // Entry doesn't exist
           alert(`Added ${collection} successfully`);
         }
         else {
@@ -45,7 +45,7 @@ const DataManipulation = (props) => {
 
         const res = await response.json();
 
-        if(res.entryCheck === 0) {
+        if(res.entryCheck === 0) {                    // Entry doesn't exist
           alert(`${collection} doesn't exists`);
         }
         else {
