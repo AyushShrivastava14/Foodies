@@ -18,7 +18,7 @@ export default function Footer() {
                       style={{
                         height: "4.5rem",
                         width: "5rem",
-                        // mixBlendMode: "hard-light",
+                        mixBlendMode: "hard-light",
                       }}
                     />{" "}
                     <h4 className="d-inline">Foodies</h4>
