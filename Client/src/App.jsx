@@ -7,6 +7,7 @@ import ViewApp from "./Apps/ViewApp";
 import AdminApp from "./Apps/AdminApp";
 import NotAccessible from "../pages/NotAccessible";
 import CanteenApp from "./Apps/CanteenApp";
+import Footer from "../pages/Footer";
 
 function App() {
   const { authinfo } = useContext(AuthContext);
@@ -68,6 +69,7 @@ function App() {
             </>
           )}
         </Routes>
+        <Footer />
       </BrowserRouter>
     </>
   );
