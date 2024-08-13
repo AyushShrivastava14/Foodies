@@ -1,6 +1,6 @@
 import LoginForm from "../components/LoginForm";
 import { useNavigate } from "react-router-dom";
-import { useContext, useState, useEffect } from "react";
+import { useContext, useState } from "react";
 import { AuthContext } from "../context/AuthContext";
 import { TimerContext } from "../context/TimerContext";
 
@@ -11,7 +11,7 @@ export default function Login() {
   });
 
   const navigate = useNavigate();
-  const { saveToken, deleteToken } = useContext(AuthContext);
+  const { saveToken } = useContext(AuthContext);
   const { newTimer } = useContext(TimerContext);
 
   const handleInput = (event) => {
