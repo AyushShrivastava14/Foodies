@@ -10,7 +10,7 @@ export default function Footer() {
             <div className="g-col-6">
               <div className="container text-center">
                 <div className="row">
-                  <div className="col-2">
+                  <div className="col-sm-12 col-md-2 col-lg-2">
                     <img
                       src={logo}
                       alt="LOGO"
@@ -23,7 +23,7 @@ export default function Footer() {
                     />{" "}
                     <h4 className="d-inline">Foodies</h4>
                   </div>
-                  <div className="col-10">
+                  <div className="col-sm-12 col-md-10 col-lg-10">
                     <div className="row">
                       {/* Col */}
                       <div
@@ -40,8 +40,8 @@ export default function Footer() {
                             background: "transparent",
                           }}
                         >
-                          <div className="row g-0 mt-3">
-                            <div className="col-md-3">
+                          <div className="row g-0 p-2">
+                            <div className="col-sm-12 col-md-3">
                               <img
                                 src={gmail}
                                 className="img-fluid rounded-start"
@@ -49,8 +49,8 @@ export default function Footer() {
                                 style={{ width: "3rem", height: "3rem" }}
                               />
                             </div>
-                            <div className="col-md-9">
-                              <div className="card-body p-0 text-start">
+                            <div className="col-sm-12 col-md-9">
+                              <div className="card-body p-0 text-center">
                                 <h5 className="card-title m-0">Contact Us</h5>
                                 <p className="card-text">
                                   ayush.shrivastava023@gmail.com
@@ -67,8 +67,8 @@ export default function Footer() {
             </div>
           </div>
         </div>
+        <div className="text-center p-2">
         <hr style={{ color: "black" }} />
-        <div className="text-center pb-3">
           © 2024 — All Rights Reserved.
         </div>
       </footer>

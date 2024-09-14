@@ -17,7 +17,7 @@ export default function Signup() {
   });
 
   const navigate = useNavigate();
-  const { saveToken, deleteToken } = useContext(AuthContext);
+  const { saveToken } = useContext(AuthContext);
   const { newTimer } = useContext(TimerContext);
 
   const handleInput = (event) => {
