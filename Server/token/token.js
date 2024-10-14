@@ -5,14 +5,14 @@ const generateToken = (email) => {
         email: email
     };
 
-    const secret = 'Foodies';
+    const secret = process.env.KEY;
     const options = {expiresIn: 300};
 
     return jwt.sign(payload, secret, options);
 }
 
 const verifyToken = (token) => {
-    const secret = 'Foodies';
+    const secret = process.env.KEY;
 
     try {
         if(jwt.verify(token, secret)) {

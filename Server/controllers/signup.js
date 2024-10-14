@@ -32,7 +32,7 @@ const check = async (data) => {
     } else {
       // if user doesn't exist/new user
       //   signal = 0;
-      await client.close();
+      // await client.close();
       // return false;
       return 0;
     }
